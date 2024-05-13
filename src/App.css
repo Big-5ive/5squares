@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Poppins, "sans-serif";
+}
+
+#root{
+    max-width: 100vw;
+    background-color: #fff;
+}
+
+
+/* 
+@media screen and (width <= 992px) {
+
+}
+
+@media screen and (width <= 570px) {
+ 
+}
+
+@media screen and (width <= 246px) {
+
+}
+
+@media screen and (width <= 136px) {
+} */
