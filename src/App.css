@@ -2,14 +2,13 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: Poppins, "sans-serif";
+    /* font-family: Poppins, "sans-serif"; */
 }
 
 #root{
     width: 100%;
     height: 100vh;
     max-width: 100vw;
-    background-color: green;
 }
 
 
