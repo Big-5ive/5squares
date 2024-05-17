@@ -1,0 +1,39 @@
+.fp-cont {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.pI::placeholder {
+  color: #c7cbd7;
+}
+
+.IconContainer {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconHolder {
+  width: 2.9rem;
+  height: 2.9rem;
+}
+
+.facebook {
+  background-color: #3b5a99;
+}
+
+.google {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.linkedin {
+    background-color: #0076b8;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.twitter {
+    background-color: #069ff5;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

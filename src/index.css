@@ -1,0 +1,44 @@
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-btw{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.gap1{
+    gap: 1rem;
+}
+
+.w-max{
+    width: 100%;
+}
+
+
