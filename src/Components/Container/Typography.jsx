@@ -1,6 +1,6 @@
 import React from "react";
 
-const Typography = ({ children, ms, type }) => {
+const Typography = ({ children, ms, type, onClick }) => {
 
     const text1 = {
       fontSize: "0.8rem",
@@ -37,15 +37,15 @@ const Typography = ({ children, ms, type }) => {
 
   switch (type) {
     case "text1":
-      return <span style={{ ...text1, ...ms }}>{children}</span>;
+      return <span style={{ ...text1, ...ms }} onClick={onClick}>{children}</span>;
     case "text2":
-      return <span style={{ ...text2, ...ms }}>{children}</span>;
+      return <span style={{ ...text2, ...ms }} onClick={onClick}>{children}</span>;
     case "text3":
-      return <span style={{ ...text3, ...ms }}>{children}</span>;
+      return <span style={{ ...text3, ...ms }} onClick={onClick}>{children}</span>;
     case "text4":
-      return <span style={{ ...text4, ...ms }}>{children}</span>;
+      return <span style={{ ...text4, ...ms }} onClick={onClick}>{children}</span>;
     case "text4":
-      return <span style={{ ...text5, ...ms }}>{children}</span>;
+      return <span style={{ ...text5, ...ms }} onClick={onClick}>{children}</span>;
     default:
       return <></>;
   }

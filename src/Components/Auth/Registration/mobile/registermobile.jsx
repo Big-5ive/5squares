@@ -1,4 +1,4 @@
-import './registermobile.css'
+import "./registermobile.css";
 import { LiaTimesSolid } from "react-icons/lia";
 import { VscFeedback } from "react-icons/vsc";
 import { TbBrandFacebook } from "react-icons/tb";
@@ -15,42 +15,42 @@ import { useState, useRef } from 'react';
 
 
 const MobileRegister = () => {
-    const [showPassword, setShowPassword] = useState(false)
-    const [position, setPosition] = useState(0)
-    const [isDragging, setIsdragging] = useState(false)
-    const startXRef = useRef(0)
-    // const startPosRef = useRef(0)
-  
-    const handleMouseDown = (e) =>{
-      setIsdragging(true)
-      startXRef.current = e.clientX - position
-      // startPosRef.current = position
-    }
-  
-    const handleTouchStart = (e) =>{
-      setIsdragging(true)
-      startXRef.current = e.touches[0].clientX - position
-    }
-  
-    const handleMouseMove = (e) => {
-      if (!isDragging) return;
-      const newX = e.clientX - startXRef.current
-      setPosition(newX > 0 ? newX: 0)
-    }
-  
-    const handleTouchMove = (e) => {
-      if (!isDragging) return;
-      const newx = e.touches[0].clientX - startXRef.current
-      setPosition(newx > 0? newx : 0)
-    }
-  
-    const handleMouseUp = () => {
-      setIsdragging(false)
-    }
-  
-    const handleTouchEnd = () => {
-      setIsdragging(false)
-    }
+  const [showPassword, setShowPassword] = useState(false);
+  const [position, setPosition] = useState(0);
+  const [isDragging, setIsdragging] = useState(false);
+  const startXRef = useRef(0);
+  // const startPosRef = useRef(0)
+
+  const handleMouseDown = (e) => {
+    setIsdragging(true);
+    startXRef.current = e.clientX - position;
+    // startPosRef.current = position
+  };
+
+  const handleTouchStart = (e) => {
+    setIsdragging(true);
+    startXRef.current = e.touches[0].clientX - position;
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const newX = e.clientX - startXRef.current;
+    setPosition(newX > 0 ? newX : 0);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const newx = e.touches[0].clientX - startXRef.current;
+    setPosition(newx > 0 ? newx : 0);
+  };
+
+  const handleMouseUp = () => {
+    setIsdragging(false);
+  };
+
+  const handleTouchEnd = () => {
+    setIsdragging(false);
+  };
 
     return(
         <div className="mobilereg-wrap">
@@ -164,4 +164,4 @@ const MobileRegister = () => {
     )
 }
 
-export default MobileRegister
+export default MobileRegister;

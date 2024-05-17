@@ -1,49 +1,49 @@
-.statewrap{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: 1px solid silver;
+.statewrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid silver;
 }
-.search-wrap{
-    width: 100%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* background-color: gray; */
+.search-wrap {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: gray; */
 }
-.search-hold{
-    width: 95%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid silver;
+.search-hold {
+  width: 95%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid silver;
 }
-.search-hold input{
-    width: 92%;
-    height: 100%;
-    border: none;
-    outline: none;
-    padding-left: 2%;
+.search-hold input {
+  width: 92%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding-left: 2%;
 }
-.state-hold{
-    width: 100%;
-    height: 90%;
-    overflow: scroll;
-    /* background-color: yellow; */
+.state-hold {
+  width: 100%;
+  height: 90%;
+  overflow: scroll;
+  /* background-color: yellow; */
 }
-.state-name{
-    width: 100%;
-    height: 40px;
-    padding-left: 3%;
-    display: flex;
-    align-items: center;
-    background-color: white;
+.state-name {
+  width: 100%;
+  height: 40px;
+  padding-left: 3%;
+  display: flex;
+  align-items: center;
+  background-color: white;
 }
-.state-name:hover{
-    background-color: silver;
-    cursor: pointer;
+.state-name:hover {
+  background-color: silver;
+  cursor: pointer;
 }

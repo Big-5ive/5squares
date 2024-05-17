@@ -1,10 +1,8 @@
-import React from 'react'
-import "./ForgetPass.css"
+import React from "react";
+import "./ForgetPass.css";
 
 const ForgetPass = () => {
-  return (
-    <div>ForgetPass</div>
-  )
-}
+  return <div>ForgetPass</div>;
+};
 
-export default ForgetPass
+export default ForgetPass;

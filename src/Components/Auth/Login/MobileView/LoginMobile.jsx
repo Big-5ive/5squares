@@ -7,8 +7,10 @@ import LoginIcon from "./LoginIcon.jsx";
 import "./LoginMobile.css";
 import { PiWarningCircleFill } from "react-icons/pi";
 import { FiEdit } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
 
 export function LoginMobile() {
+  const nav = useNavigate();
   return (
     <Container>
       <Wrapper>
@@ -22,7 +24,9 @@ export function LoginMobile() {
           </div>
           <div className="flex items-center space-x-3">
             <PiWarningCircleFill className="text-red-500 text-[1.5em]" />
-            <p className="text-red-500 text-sm">Your account name or password is incorrect</p>
+            <p className="text-red-500 text-sm">
+              Your account name or password is incorrect
+            </p>
           </div>
         </div>
         <div className="w-full space-y-4">
@@ -45,12 +49,14 @@ export function LoginMobile() {
         </div>
         <Typography type={"text1"}>or sign in with</Typography>
         <LoginIcon />
-        <Typography type={"text1"}>
-          Don't have an account?{" "}
-          <Typography type={"text1"} ms={{ color: "#ff81a5" }}>
-            Register
-          </Typography>{" "}
-        </Typography>
+        <Link to={"/register"}>
+          <Typography type={"text1"}>
+            Don't have an account?{" "}
+            <Typography type={"text1"} ms={{ color: "#ff81a5" }}>
+              Register
+            </Typography>{" "}
+          </Typography>
+        </Link>
       </Wrapper>
     </Container>
   );
