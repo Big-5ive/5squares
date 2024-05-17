@@ -24,7 +24,9 @@ export function LoginMobile() {
           </div>
           <div className="flex items-center space-x-3">
             <PiWarningCircleFill className="text-red-500 text-[1.5em]" />
-            <p className="text-red-500 text-sm">Your account name or password is incorrect</p>
+            <p className="text-red-500 text-sm">
+              Your account name or password is incorrect
+            </p>
           </div>
         </div>
         <div className="w-full space-y-4">
@@ -46,14 +48,14 @@ export function LoginMobile() {
           />
         </div>
         <Link to={"/register"}>
-        <Typography type={"text1"}>or sign in with</Typography>
-        <LoginIcon />
-        <Typography type={"text1"} >
-          Don't have an account?{" "}
-          <Typography type={"text1"} ms={{ color: "#ff81a5" }}>
-            Register
-          </Typography>{" "}
-        </Typography>
+          <Typography type={"text1"}>or sign in with</Typography>
+          <LoginIcon />
+          <Typography type={"text1"}>
+            Don't have an account?{" "}
+            <Typography type={"text1"} ms={{ color: "#ff81a5" }}>
+              Register
+            </Typography>{" "}
+          </Typography>
         </Link>
       </Wrapper>
     </Container>
