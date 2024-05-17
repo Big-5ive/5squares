@@ -7,8 +7,10 @@ import LoginIcon from "./LoginIcon.jsx";
 import "./LoginMobile.css";
 import { PiWarningCircleFill } from "react-icons/pi";
 import { FiEdit } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
 
 export function LoginMobile() {
+  const nav = useNavigate();
   return (
     <Container>
       <Wrapper>
@@ -43,14 +45,16 @@ export function LoginMobile() {
             ms={{ backgroundColor: "#ff7e25" }}
           />
         </div>
+        <Link to={"/register"}>
         <Typography type={"text1"}>or sign in with</Typography>
         <LoginIcon />
-        <Typography type={"text1"}>
+        <Typography type={"text1"} >
           Don't have an account?{" "}
           <Typography type={"text1"} ms={{ color: "#ff81a5" }}>
             Register
           </Typography>{" "}
         </Typography>
+        </Link>
       </Wrapper>
     </Container>
   );
