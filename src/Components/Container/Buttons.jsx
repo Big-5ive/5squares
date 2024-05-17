@@ -11,6 +11,7 @@ const Button = ({ type, ms, title, onClick }) => {
     borderRadius: 4,
     border: "none",
     outline: "none",
+    boxShadow:"box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
   };
   const buttonText = {
     color: "#EF5A5A",
@@ -19,13 +20,14 @@ const Button = ({ type, ms, title, onClick }) => {
     color: "#fff",
     fontFamily: "inter",
     fontSize: "1.2rem",
-    letterSpacing: "0.1rem",
+    // letterSpacing: "0.1rem",
   };
   const button2 = {
     backgroundColor: "#EF5A5A",
     borderWidth: 1,
     borderColor: "#fff",
     borderRadius: 4,
+    boxShadow:"box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
   };
 
   switch (type) {

@@ -17,7 +17,7 @@ export default function Container({ children }) {
 export function Wrapper({ children, ms }) {
   const styles = {
     body: {
-      width: "90%",
+      width: "95%",
       height: "95%",
       display: "flex",
       flexDirection: "column",

@@ -3,14 +3,14 @@ import React from "react";
 const Typography = ({ children, ms, type }) => {
 
     const text1 = {
-      fontSize: "1rem",
+      fontSize: "0.8rem",
       fontWeight: 300,
-      fontFamily: "Roboto",
+      fontFamily: "inter",
       color: "gray",
       textAlign: "center",
     };
     const text2= {
-      fontSize: "1.5rem",
+      fontSize: "1.2rem",
       fontFamily: "inter",
       fontWeight: 500,
       color:"#333333",
