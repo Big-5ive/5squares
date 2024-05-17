@@ -11,7 +11,7 @@ export function LoginMobile() {
   return (
     <Container>
       <Wrapper>
-        <div className="flex-btw w-max">
+        <div className="flex-btw justify-between w-full mb-28">
           <button className="flex-center gap1">
             <IoClose style={{fontSize:"40px",color:"#858585"}} />
            <Typography type={"text2"}>Sign In</Typography>

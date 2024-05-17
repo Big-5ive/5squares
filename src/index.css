@@ -1,44 +1,19 @@
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  .Matrix{
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, 0, 0, 1)
+  }
 }
 
-.flex-btw{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+@layer components{
+  .flex-center {
+      @apply flex items-center justify-center 
+  }
+  .flex-btw {
+      @apply flex items-center justify-between 
+  }
 }
-
-.column-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle {
-  border-radius: 50%;
-}
-
-.fit {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-button{
-    border: none;
-    outline: none;
-    background-color: transparent;
-}
-
-.gap1{
-    gap: 1rem;
-}
-
-.w-max{
-    width: 100%;
-}
-
 

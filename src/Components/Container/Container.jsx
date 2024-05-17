@@ -21,9 +21,9 @@ export function Wrapper({ children, ms }) {
       height: "95%",
       display: "flex",
       flexDirection: "column",
-      justifyContent: "center",
+      // justifyContent: "center",
       alignItems: "center",
-      gap: 10,
+      gap: "15px,"
     //   backgroundColor: "red",
     },
   };
