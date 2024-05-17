@@ -1,10 +1,10 @@
 import './registermobile.css'
 import { LiaTimesSolid } from "react-icons/lia";
 import { VscFeedback } from "react-icons/vsc";
-import { BsFacebook } from "react-icons/bs";
+import { TbBrandFacebook } from "react-icons/tb";
 import { FcGoogle } from "react-icons/fc";
-import { AiFillTwitterCircle } from "react-icons/ai";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa";
 import { PiBuildings } from "react-icons/pi";
 import { TfiEmail } from "react-icons/tfi";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -12,6 +12,7 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa6";
 import { TfiControlForward } from "react-icons/tfi";
 import { useState, useRef } from 'react';
+
 
 const MobileRegister = () => {
     const [showPassword, setShowPassword] = useState(false)
@@ -66,10 +67,18 @@ const MobileRegister = () => {
                         <p>to enjoy secure payments and free features</p>
                     </div>
                     <div className="social-icons">
-                        <BsFacebook className='facebook'/>
-                        <FcGoogle />
-                        <AiFillTwitterCircle className='twitter'/>
-                        <FaLinkedin color='blue'/>
+                        <div className='facebook'>
+                            <TbBrandFacebook />
+                        </div>
+                        <div className="google">
+                            <FcGoogle />
+                        </div>
+                        <div className="twitter">
+                            <FaTwitter />
+                        </div>
+                        <div className="linkdin">
+                            <FaLinkedinIn />
+                        </div>
                     </div>
                 </div>
                 <div className="reg-mobile-input-cont">

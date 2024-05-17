@@ -55,10 +55,46 @@
     /* background-color: gray; */
 }
 .facebook{
-    color: rgba(9, 9, 138, 0.804);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    font-size: 30px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    color: white;
+}
+.google{
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .twitter{
-    color: rgb(93, 201, 244);
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(59, 59, 190);
+}
+.linkdin{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(59, 59, 156);
 }
 .reg-mobile-input-cont{
     width: 100%;
@@ -133,7 +169,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 25px;
+    font-size: 20px;
     padding-left: 2%;
     border-radius: 10px;
     border: 1px solid silver;
@@ -198,7 +234,8 @@
 }
 .slide-mobile-verify{
     width: 100%;
-    height: 70px;
+    height: 50px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -210,15 +247,17 @@
     font-size: 15px;
 }
 .slide-mobile-hold{
-    width: 15%;
+    width: 30%;
     height: 100%;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 30px;
     cursor: grab;
     transition: transform 0.1s ease;
-    background-color: wheat;
+    background-color: #ff6000;
+    color: white;
     margin-right: 50px;
 }
 .slide-mobile-hold:active{
