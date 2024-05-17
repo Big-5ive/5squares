@@ -47,9 +47,9 @@ export function LoginMobile() {
             ms={{ backgroundColor: "#ff7e25" }}
           />
         </div>
+        <Typography type={"text1"}>or sign in with</Typography>
+        <LoginIcon />
         <Link to={"/register"}>
-          <Typography type={"text1"}>or sign in with</Typography>
-          <LoginIcon />
           <Typography type={"text1"}>
             Don't have an account?{" "}
             <Typography type={"text1"} ms={{ color: "#ff81a5" }}>
