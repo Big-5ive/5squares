@@ -246,6 +246,11 @@
 .slide-mobile-verify p {
   font-size: 15px;
 }
+.slide-mobile-verify.verified{
+  background-color: white;
+  border: 1px solid green;
+  color: green;
+}
 .slide-mobile-hold{
     width: 30%;
     height: 100%;
