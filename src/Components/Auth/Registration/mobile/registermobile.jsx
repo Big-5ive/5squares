@@ -11,6 +11,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa6";
 import { TfiControlForward } from "react-icons/tfi";
+import { FaCheckCircle } from "react-icons/fa";
 import { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 
@@ -171,12 +172,14 @@ const MobileRegister = () => {
                             onMouseLeave={handleMouseUp}
                             ref={containerRef}
                         >
-                            <div className="slide-mobile-hold"
+                            <div className={`slide-mobile-hold ${isVerified ? 'slide-mobile' : ''}`}
                                 style={{transform: `translateX(${position}px)`}}
                                 onMouseDown={handleMouseDown}
                                 onTouchStart={handleTouchStart}
                             >
-                                <TfiControlForward color={isVerified ? "green" : "white"}/>
+                                {
+                                    isVerified ? <FaCheckCircle /> : <TfiControlForward />
+                                }
                             </div>
                             {
                                 isVerified? <p>Verified</p>: <p>slide to verify</p>

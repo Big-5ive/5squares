@@ -1,0 +1,97 @@
+.identify-mobile{
+    width: 100%;
+    height: max-content;
+}
+.identify-mobile-head{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: wheat; */
+}
+.identify-mobile-head-wrap{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: yellow; */
+}
+.identify-mobile-input{
+    width: 100%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: yellow; */
+}
+.identify-mobile-input-hold{
+    width: 95%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: blue; */
+}
+.identify-mobile-input-input{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid silver;
+    background-color: white;
+}
+.identify-mobile-input-input input{
+    width: 40%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.identify-mobile-input-input button{
+    width: 25%;
+    height: 80%;
+    border-radius: 4px;
+    color: white;
+    background-image: linear-gradient(to right, #ff9b19, #ff8c0b, #ff7c01, #ff6b00, #ff5800);
+}
+.identify-mobile-input-button{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: orange; */
+}
+.identify-mobile-input-button button{
+    width: 100%;
+    height: 90%;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: orangered;
+}
+.identify-mobile-notice{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: silver; */
+}
+.identify-mobile-notice-hold{
+    width: 95%;
+    height: 90%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: silver;
+}
+.identify-mobile-notice-hold h1{
+    font-weight: bold;
+}
