@@ -7,6 +7,7 @@
   width: 100%;
   height: 100px;
   display: flex;
+  font-size: 40px;
   align-items: center;
   padding-left: 5%;
   color: #ff6000;
@@ -116,6 +117,7 @@
 #emailreg2 {
   width: 31%;
   height: 40px;
+  font-size: 13px;
   padding-left: 2%;
   border: 1px solid silver;
 }
@@ -137,20 +139,32 @@
   padding-right: 2%;
   background-color: #e8e8e8;
 }
+.verify.verified{
+  background-color: white;
+  border: 1px solid green;
+  color: green;
+}
 .item-drag {
   width: 15%;
   height: 100%;
   font-size: 30px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  border: 1px solid silver;
+  color: silver;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: grab;
+  cursor: cell;
   transition: transform 0.1s ease;
-  background-color: gray;
+  background-color: white;
 }
 .item-drag:active {
-  cursor: grabbing;
+  cursor: cell;
+}
+.item2{
+  /* border: 1px solid green; */
+  font-size: 20px;
+  color: green;
 }
 .verify-check {
   width: 20px;
@@ -187,6 +201,18 @@
 }
 .register-button button:hover {
   background-color: #e65d09;
+}
+.account-already{
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  /* background-color: blue; */
+}
+.account-already span{
+  color: #e65d09;
+  cursor: pointer;
 }
 .mobile-res {
   width: 100%;

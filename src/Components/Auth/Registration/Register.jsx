@@ -3,36 +3,56 @@ import "./Register.css";
 import { MdKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { TfiControlForward } from "react-icons/tfi";
 import StateComponent from "./states/allStates";
+import { FaCheckCircle } from "react-icons/fa";
 import MobileRegister from "./mobile/registermobile";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [arrow, setArrow] = useState(false);
   const [position, setPosition] = useState(0);
   const [isDragging, setIsdragging] = useState(false);
+  const [isVerified, setIsVerified] = useState(false)
   const startXRef = useRef(0);
-  // const startPosRef = useRef(0)
+  const containerRef = useRef(null)
+  const [company, setCompany] = useState("")
+
+  const navigate = useNavigate()
 
   const handleMouseDown = (e) => {
+    if (isVerified) return;
     setIsdragging(true);
     startXRef.current = e.clientX - position;
-    // startPosRef.current = position
   };
 
   const handleTouchStart = (e) => {
+    if (isVerified) return;
     setIsdragging(true);
     startXRef.current = e.touches[0].clientX - position;
   };
 
   const handleMouseMove = (e) => {
-    if (!isDragging) return;
+    if (!isDragging || isVerified) return;
     const newX = e.clientX - startXRef.current;
-    setPosition(newX > 0 ? newX : 0);
+    const containerWidth = containerRef.current.offsetWidth;
+    const itemWidth = containerRef.current.firstChild.offsetWidth;
+    const maxPosition = containerWidth - itemWidth
+    setPosition(newX >= 0 && newX <= maxPosition ? newX : newX > maxPosition ? maxPosition : 0);
+    if (newX >= maxPosition) {
+        validateInput();
+    }
   };
 
   const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const newx = e.touches[0].clientX - startXRef.current;
-    setPosition(newx > 0 ? newx : 0);
+    if (!isDragging || isVerified) return;
+    const newX = e.touches[0].clientX - startXRef.current;
+    const containerWidth = containerRef.current.offsetWidth;
+    const itemWidth = containerRef.current.firstChild.offsetWidth;
+    const maxPosition = containerWidth - itemWidth
+    setPosition(newX >= 0 && newX <= maxPosition ? newX : newX > maxPosition ? maxPosition : 0);
+    setPosition(newX >= 0 && newX <= maxPosition ? newX : newX > maxPosition ? maxPosition : 0);
+    if (newX >= maxPosition) {
+        validateInput()
+    }
   };
 
   const handleMouseUp = () => {
@@ -42,6 +62,15 @@ const Register = () => {
   const handleTouchEnd = () => {
     setIsdragging(false);
   };
+
+  const validateInput = () => {
+    if (company.trim() === "") {
+        alert("Error: Input field cannot be empty")
+        setPosition(0)
+    }else {
+        setIsVerified(true)
+    }
+  }
 
   return (
     <div className="register-wrapper">
@@ -142,6 +171,8 @@ const Register = () => {
             <div className="role-option">
               <input
                 id="emailreg"
+                value={company}
+                onChange={(e)=> setCompany(e.target.value)}
                 placeholder="please enter your company name"
                 type="text"
               />
@@ -181,22 +212,27 @@ const Register = () => {
             </div>
             <div className="role-option">
               <div
-                className="verify"
+                className={`verify ${isVerified? 'verified' : ''}`}
                 onMouseMove={handleMouseMove}
                 onTouchMove={handleTouchMove}
                 onMouseUp={handleMouseUp}
                 onTouchEnd={handleTouchEnd}
                 onMouseLeave={handleMouseUp}
+                ref={containerRef}
               >
                 <div
-                  className="item-drag"
+                  className={`item-drag ${isVerified ? 'item2' : ''}`}
                   style={{ transform: `translateX(${position}px)` }}
                   onMouseDown={handleMouseDown}
                   onTouchStart={handleTouchStart}
                 >
-                  <TfiControlForward />
+                  {
+                    isVerified ? <FaCheckCircle /> : <TfiControlForward />
+                  }
                 </div>
-                <p>please slide to verify</p>
+                {
+                  isVerified? "Verified" : <p>please slide to verify</p>
+                }
               </div>
             </div>
           </div>
@@ -221,6 +257,9 @@ const Register = () => {
             <div className="register-button">
               <button>Agree and Register</button>
             </div>
+          </div>
+          <div className="account-already">
+            <p>Already have an account?<span onClick={()=>navigate("/")}>Sign in</span></p>
           </div>
         </div>
       </div>
