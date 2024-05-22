@@ -234,7 +234,7 @@
 }
 .slide-mobile-verify{
     width: 100%;
-    height: 50px;
+    height: 43px;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -252,21 +252,25 @@
   color: green;
 }
 .slide-mobile-hold{
-    width: 30%;
+    width: 25%;
     height: 100%;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 30px;
-    cursor: grab;
+    cursor: cell;
     transition: transform 0.1s ease;
     background-color: #ff6000;
     color: white;
     margin-right: 50px;
 }
+.slide-mobile{
+  background-color: silver;
+  color: green;
+}
 .slide-mobile-hold:active {
-  cursor: grabbing;
+  cursor: cell;
 }
 .mobile-agree {
   width: 100%;

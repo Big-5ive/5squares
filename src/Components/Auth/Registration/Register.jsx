@@ -3,7 +3,9 @@ import "./Register.css";
 import { MdKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { TfiControlForward } from "react-icons/tfi";
 import StateComponent from "./states/allStates";
+import { FaCheckCircle } from "react-icons/fa";
 import MobileRegister from "./mobile/registermobile";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [arrow, setArrow] = useState(false);
@@ -14,7 +16,7 @@ const Register = () => {
   const containerRef = useRef(null)
   const [company, setCompany] = useState("")
 
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const handleMouseDown = (e) => {
     if (isVerified) return;
@@ -219,12 +221,14 @@ const Register = () => {
                 ref={containerRef}
               >
                 <div
-                  className="item-drag"
+                  className={`item-drag ${isVerified ? 'item2' : ''}`}
                   style={{ transform: `translateX(${position}px)` }}
                   onMouseDown={handleMouseDown}
                   onTouchStart={handleTouchStart}
                 >
-                  <TfiControlForward color={isVerified ? "green" : "white"}/>
+                  {
+                    isVerified ? <FaCheckCircle /> : <TfiControlForward />
+                  }
                 </div>
                 {
                   isVerified? "Verified" : <p>please slide to verify</p>
@@ -253,6 +257,9 @@ const Register = () => {
             <div className="register-button">
               <button>Agree and Register</button>
             </div>
+          </div>
+          <div className="account-already">
+            <p>Already have an account?<span onClick={()=>navigate("/")}>Sign in</span></p>
           </div>
         </div>
       </div>
