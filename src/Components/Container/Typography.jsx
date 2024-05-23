@@ -37,15 +37,15 @@ const Typography = ({ children, ms, type, onClick }) => {
 
   switch (type) {
     case "text1":
-      return <span style={{ ...text1, ...ms }} >{children}</span>;
+      return <p style={{ ...text1, ...ms }} >{children}</p>;
     case "text2":
-      return <span style={{ ...text2, ...ms }}>{children}</span>;
+      return <p style={{ ...text2, ...ms }}>{children}</p>;
     case "text3":
-      return <span style={{ ...text3, ...ms }}>{children}</span>;
+      return <p style={{ ...text3, ...ms }}>{children}</p>;
     case "text4":
-      return <span style={{ ...text4, ...ms }}>{children}</span>;
-    case "text4":
-      return <span style={{ ...text5, ...ms }}>{children}</span>;
+      return <p style={{ ...text4, ...ms }}>{children}</p>;
+    case "text5":
+      return <p style={{ ...text5, ...ms }}>{children}</p>;
     default:
       return <></>;
   }
