@@ -1,8 +1,8 @@
 import React from "react";
 import "./Login.css";
 import { LoginMobile } from "./MobileView/LoginMobile";
-import HeroLogin from "./DesktopView/heroLogin";
 import LoginHeader from "./DesktopView/LoginHeader";
+import LoginHero from "./DesktopView/LoginHero";
 
 
 const Login = () => {
@@ -13,7 +13,7 @@ const Login = () => {
       </div>
       <div className="max-[1024px]:hidden">
         <LoginHeader />
-        <HeroLogin />
+        <LoginHero />
       </div>
     </>
   );
