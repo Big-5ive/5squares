@@ -70,14 +70,14 @@ const Feedback = () => {
             </label>
             <div className="relative w-[93%]">
               <div 
-                className="flex items-center justify-between w-full h-10 px-4 py-2 bg-white border border-gray-300 cursor-pointer" 
+                className="flex items-center justify-between w-full h-10 px-4 py-2 bg-white cursor-pointer" 
                 onClick={handleAccount}
               >
                 <span className="text-sm">{selectedOption}</span>
                 <PiCaretDownThin className="text-sm" />
               </div>
               {dropdownOpen && (
-                <div className="absolute left-0 right-0 z-10 mt-1 bg-white border border-gray-300 shadow-lg">
+                <div className="absolute left-0 right-0 z-10 -mt-1 bg-white ">
                   {options.map((option, index) => (
                     <div
                       key={index}
@@ -92,14 +92,14 @@ const Feedback = () => {
             </div>
             <div className="relative w-[93%] mt-4">
               <div 
-                className="flex items-center justify-between w-full h-10 px-4 py-2 bg-white border border-gray-300 cursor-pointer" 
+                className="flex items-center justify-between w-full h-10 px-4 py-2 bg-white cursor-pointer" 
                 onClick={() => setDropdownOpen1(!dropdownOpen1)}
               >
                 <span className="text-sm">{selectedOption1}</span>
                 <PiCaretDownThin className="text-sm" />
               </div>
               {dropdownOpen1 && (
-                <div className="absolute left-0 right-0 z-10 mt-1 bg-white border border-gray-300 shadow-lg">
+                <div className="absolute left-0 right-0 z-10 -mt-1 bg-white">
                   {options1.map((option1, index) => (
                     <div
                       key={index}
