@@ -8,10 +8,10 @@ import LoginHero from "./DesktopView/LoginHero";
 const Login = () => {
   return (
     <>
-      <div className="lg:hidden ">
+      <div className="hidden max-[700px]:flex ">
         <LoginMobile />
       </div>
-      <div className="max-[1024px]:hidden">
+      <div className="max-[700px]:hidden">
         <LoginHeader />
         <LoginHero />
       </div>

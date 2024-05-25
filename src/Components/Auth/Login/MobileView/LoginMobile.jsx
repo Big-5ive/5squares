@@ -20,7 +20,9 @@ export function LoginMobile() {
               <IoCloseOutline style={{ fontSize: "2rem", color: "#858585" }} />
               <Typography type={"text2"}>Sign In</Typography>
             </button>
-            <FiEdit style={{ fontSize: "1.4rem", color: "#858585" }} />
+            <Link to="feedback">
+              <FiEdit style={{ fontSize: "1.4rem", color: "#858585" }} />
+            </Link>
           </div>
           <div className="flex items-center space-x-3">
             <PiWarningCircleFill className="text-red-500 text-[1.5em]" />
