@@ -50,13 +50,13 @@ const Feedback = () => {
       <div className="flex flex-col items-center w-full h-auto">
         <div className="flex items-center justify-between w-[93%] h-auto py-3">
           <PiCaretLeftThin className="text-2xl" />
-          <p className="text-2xl font-bold text-[#333]">Bug/Suggestion</p>
+          <p className="text-xl font-bold text-[#333]">Bug/Suggestion</p>
           <div className="">{""}</div>
         </div>
-        <div className="flex flex-col items-center w-full h-auto py-4 bg-gray-300">
+        <div className="flex flex-col items-center w-full h-auto py-4 bg-[#f7f7f7]">
           <div className="flex flex-col w-[93%] space-y-2">
-            <h1 className="text-2xl text-[#333]">How can we do better?</h1>
-            <p className="text-[#333]">
+            <h1 className="text-xl text-[#333]">How can we do better?</h1>
+            <p className="text-[#333] text-[1.001rem]">
               Our developers are working hard to improve the app experience!
               Please quickly tell us here a{" "}
               <span className="font-bold text-[#5a5a5a]">
@@ -124,6 +124,8 @@ const Feedback = () => {
                 {additionalInfo.length}/120
               </div>
             </div>
+            <input type="email" name="email" placeholder="Enter email" className="w-[93%] mt-4 h-10 px-4 py-2" />
+            <p className="w-[93%] text-sm text-[#999] my-1">It will only be used to follow up on the report</p>
           </form>
         </div>
       </div>
