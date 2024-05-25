@@ -29,7 +29,16 @@ const route = createHashRouter([
   {
     path: "/changepass",
     element: <ChangePassword />
-  }
+  },
+  {
+    path: "/feedback",
+    element: <Feedback />
+  },
+  {
+    path: "/acc",
+    element: <Account />
+  },
+
 ]);
 
 function App() {
