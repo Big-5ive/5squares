@@ -63,7 +63,7 @@ const Feedback = () => {
   return (
     <div className="flex justify-center w-full h-auto">
       <div className="flex flex-col items-center w-full h-auto">
-        <div className="flex items-center justify-between w-[93%] h-auto py-3">
+        <div className="flex items-center justify-between w-[93%] h-auto py-3 sticky top-0 left-0 right-0 z-20 bg-white">
           <PiCaretLeftThin className="text-2xl" />
           <p className="text-xl font-bold text-[#333]">Bug/Suggestion</p>
           <div className="">{""}</div>
@@ -183,6 +183,7 @@ const Feedback = () => {
                 />
               </label>
             </div>
+            <button className="w-[93%] h-10 rounded-full text-white bg-[#f0be9c] mt-10">Submit</button>
           </form>
         </div>
       </div>
