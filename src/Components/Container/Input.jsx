@@ -29,7 +29,7 @@ const InputField = ({ type, ms, onChange, placeholder }) => {
     fontSize: "1.2rem",
     // fontFamily: "Montserrat",
     fontFamily:"inter",
-    color: "#dcdfe8",
+    color: "#333",
      border: "none",
     outline: "none",
   };
