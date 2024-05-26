@@ -65,7 +65,7 @@ export function LoginMobile() {
   return (
     <Container>
       <Wrapper>
-        <form onSubmit={handleSubmit} className="mb-20 w-full flex flex-col space-y-3">
+        <form onSubmit={handleSubmit} className="mb-20 w-full flex flex-col items-center space-y-3">
           <div className="flex-btw justify-between w-full">
             <button className="flex-center space-x-3" type="button" onClick={() => nav(-1)}>
               <IoCloseOutline style={{ fontSize: "2rem", color: "#858585" }} />
@@ -76,7 +76,7 @@ export function LoginMobile() {
             </Link>
           </div>
          
-            <div className="h-10 flex items-center space-x-3 mb-10 ">
+            <div className="w-full h-10 flex items-center space-x-3 mb-10 ">
                {error && (
             <>
               <PiWarningCircleFill className="text-red-500 text-[1.5em]" />
