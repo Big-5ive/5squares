@@ -3,16 +3,32 @@ import { PiWarningCircleFill } from "react-icons/pi";
 import { GiCheckMark } from "react-icons/gi";
 import { ImCancelCircle } from "react-icons/im";
 import { useNavigate } from 'react-router-dom';
+import { BeatLoader } from 'react-spinners';
 import IdentityverifyMobile from './identifymobile/identifyMobile';
 
-const Identify = () => {
-    const navigate = useNavigate()
+const Identify = ({
+    value, 
+    write,  
+    onchange, 
+    placeholder, 
+    handleSend, 
+    type,
+    resend,
+    resendCode,
+    inputError,
+    inputErrorMessage,
+    loading,
+    resendLoading,
+}) => {
+    // const navigate = useNavigate()
     return(
         <div className="identity-parent">
             <div className="identify-head">
                 <h1>identity verification</h1>
             </div>
-            <div className="identify-step">
+            {
+                type === "forgetPassword"?
+                <div className="identify-step">
                 <div className="steps">
                     <div className="shapes">
                         <div className='one'><p>1</p></div>
@@ -27,11 +43,13 @@ const Identify = () => {
                         <p>finished</p>
                     </div>
                 </div>
-            </div>
+            </div> : null
+            }
             <div className="identity-body">
                 <div className="identify-warn">
                     <PiWarningCircleFill color='#68b5e2'/>
-                    <p> You are currently using Email Verification , please follow these steps</p>
+                    {/* <p> You are currently using Email Verification , please follow these steps</p> */}
+                    <p>{write}</p>
                 </div>
                 <div className="identity-input-hold">
                     <div className="verify-email-hold">
@@ -45,33 +63,44 @@ const Identify = () => {
                         <div className="code-itself">
                             <input
                                 className='code-num'
-                                placeholder='6 digits'
+                                placeholder={placeholder}
                                 type="text"
+                                value={value}
+                                onChange={onchange}
                             />
                              <button
                              className='receive-code'
+                             onClick={resendCode}
                              >
-                                Click here to receive verification code
+                                {
+                                    resendLoading ? <BeatLoader color='orangered'/>:
+                                    `Click here ${resend}`
+                                }
                             </button>
                         </div>
                     </div>
-                    <div className="verification-codeerror">
+                    {
+                        inputError?
+                        <div className="verification-codeerror">
                         <p style={{width: "19%"}}></p>
                         <div className="code-itself">
                              <div className="error-code">
                                 <ImCancelCircle />
-                                <p>Please input the code</p>
+                                <p>{inputErrorMessage}</p>
                              </div>
                         </div>
-                    </div>
+                    </div>: null
+                    }
                     <div className="verification-code">
                         <p style={{width: "18%"}}></p>
                         <div className="code-itself">
                              <button
-                             onClick={()=>navigate("/changepass")}
+                             onClick={handleSend}
                              className='submit-code'
                              >
-                                submit
+                                {
+                                    loading? <BeatLoader color='white' />: "submit"
+                                }
                             </button>
                             <p></p>
                         </div>
@@ -95,8 +124,21 @@ const Identify = () => {
                     </div>
                 </div>
             </div>
-            <div className="identify-mobile">
-                <IdentityverifyMobile />
+            <div className="identify-mobile-res">
+                <IdentityverifyMobile 
+                write={write}
+                resend={resend} 
+                value={value}
+                onchange={onchange}
+                handleSend={handleSend}
+                loading={loading}
+                resendCode={resendCode}
+                inputError={inputError}
+                errorMessage={inputErrorMessage}
+                placeholder={placeholder}
+                resendLoading={resendLoading}
+                />
+                
             </div>
         </div>
     )

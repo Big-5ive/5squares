@@ -4,8 +4,9 @@ import { Toaster } from "react-hot-toast";
 import ForgetPass from "./Components/Auth/ForgetPass/ForgetPass";
 import Register from "./Components/Auth/Registration/Register";
 import Login from "./Components/Auth/Login/Login";
-import Identify from "./Components/Auth/identityVerification/identityVerify";
 import ChangePassword from "./Components/Auth/resetpassword/resetPassword";
+import VerifyOtp from "./Pages/otpVerify/otpVerification";
+import PasswordVerify from "./Pages/passwordVerify/forgetPasswordVerify";
 import Account from "./Components/Account/Account";
 import Feedback from "./Components/Auth/Feedback/Feedback";
 
@@ -23,8 +24,12 @@ const route = createHashRouter([
     element: <ForgetPass />,
   },
   {
-    path: "/identify",
-    element: <Identify />
+    path: "/verifyotp",
+    element: <VerifyOtp />
+  },
+  {
+    path: "passverify",
+    element: <PasswordVerify />
   },
   {
     path: "/changepass",

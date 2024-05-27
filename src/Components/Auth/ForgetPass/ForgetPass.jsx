@@ -5,6 +5,8 @@ import { TfiControlForward } from "react-icons/tfi";
 import { FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
+import { BeatLoader } from 'react-spinners';
+import axios from "axios";
 
 const ForgetPass = () => {
   const [position, setPosition] = useState(0);
@@ -13,6 +15,11 @@ const ForgetPass = () => {
   const startXRef = useRef(0);
   const containerRef = useRef(null)
   const [email, setEmail] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState({
+    isError: false,
+    message: ""
+  })
 
   const navigate = useNavigate()
 
@@ -63,11 +70,42 @@ const ForgetPass = () => {
 
   const validateInput = () => {
     if (email.trim() === "") {
-        alert("Error: Input field cannot be empty")
         setPosition(0)
+        setError({
+          isError: true,
+          message: "pls enter your registered email"
+        })
     }else {
-        setIsVerified(true)
+      setIsVerified(true)
     }
+  }
+
+  const handleSubmit = () => {
+    setLoading(true)
+    const url = "https://fivesquare-api.onrender.com/api/forgot"
+    const data = {
+      email: email
+    }
+    axios.post(url,data)
+    .then(Response => {
+      setLoading(false)
+      console.log(Response)
+      navigate("/passverify")
+      setError({
+        isError: false,
+        message: ""
+      })
+    })
+    .catch(error => {
+      setIsVerified(false)
+      setPosition(0)
+      setLoading(false)
+      console.log(error)
+      setError({
+        isError: true,
+        message: error.response.data
+      })
+    })
   }
 
   return (
@@ -92,6 +130,9 @@ const ForgetPass = () => {
                onChange={(e)=> setEmail(e.target.value)}
                />
             </div>
+            {
+              error.isError ? <p className="forget-eror">{error.message}</p> : null
+            }
             <div className="forget-input">
               <p>validate:</p>
               <div className={`forget-val ${isVerified ? 'forget-input2' : ''}`}
@@ -120,9 +161,11 @@ const ForgetPass = () => {
               <p style={{width: "60px"}}></p>
               {
                 isVerified ? <button
-                  onClick={()=> navigate("/identify")}
+                  onClick={handleSubmit}
                  className="forget-butt2">
-                Submit
+                {
+                  loading ? <BeatLoader color="white" /> : "Submit"
+                }
               </button> : 
               <button className="forget-butt">
                 Submit
