@@ -18,6 +18,10 @@ export function LoginMobile() {
   const nav = useNavigate();
   const url = "https://fivesquare-api.onrender.com/api/loginE";
 
+  const handleForgotPass = ()=>{
+    nav("/forget-pass")
+  }
+
   const validateForm = () => {
     if (!email) {
       setError("Email is required");
@@ -101,7 +105,7 @@ export function LoginMobile() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="fp-cont my-3">
+          <div className="fp-cont my-3" onClick={handleForgotPass}>
             <Typography type={"text1"}>Forgot password</Typography>
           </div>
           <div className="w-full mb-4">
