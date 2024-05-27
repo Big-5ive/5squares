@@ -89,7 +89,7 @@
 }
 .identity-input-hold{
     width: 50%;
-    height: 200px;
+    height: max-content;
     /* background-color: blue; */
 }
 .verify-email-hold{
@@ -127,18 +127,20 @@
     border: 1px solid red;
 }
 .receive-code{
-    width: 65%;
+    min-width: 65%;
     height: 80%;
     border-radius: 5px;
     font-size: 12px;
     color: orangered;
+    padding-left: 5px;
+    padding-right: 5px;
     cursor: pointer;
     border: 1px solid red;
     background-color: #fff1e8;
 }
 .verification-codeerror{
     width: 100%;
-    height: 40px;
+    height: max-content;
     display: flex;
     /* background-color: yellow; */
 }
@@ -180,18 +182,18 @@
 .code-notice-write p{
     font-size: 13px;
 }
-.identify-mobile{
-    width: 100%;
-    /* padding: 5px; */
-    height: max-content;
+.identify-mobile-res{
     display: none;
-    background-color: white;
 }
 
 
 @media screen and (width < 1300px) {
-    .identify-mobile{
+    .identify-mobile-res{
         display: block;
+        width: 100%;
+        padding: 5px;
+        height: max-content;
+        background-color: white;
     }
     .identify-head{
         display: none;

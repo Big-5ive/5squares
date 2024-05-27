@@ -1,8 +1,21 @@
 import { useNavigate } from 'react-router-dom'
 import './identifymobile.css'
+import { BeatLoader } from 'react-spinners'
 
-const IdentityverifyMobile = () => {
-    const navigate = useNavigate()
+const IdentityverifyMobile = ({
+    value, 
+    resend, 
+    onchange, 
+    placeholder, 
+    handleSend,
+    resendCode,
+    loading,
+    resendLoading,
+    inputError,
+    errorMessage,
+    write
+}) => {
+    // const navigate = useNavigate()
     return(
         <div className="identify-mobile">
             <div className="identify-mobile-head">
@@ -14,14 +27,32 @@ const IdentityverifyMobile = () => {
             <div className="identify-mobile-input">
                 <div className="identify-mobile-input-hold">
                     <div className="identify-mobile-input-input">
-                        <input type="text" placeholder='code' />
-                        <button>Get code</button>
+                        <input
+                          type="text"
+                          value={value}
+                          placeholder={placeholder}
+                          onChange={onchange}
+                        />
+                        <button onClick={resendCode}>
+                            {
+                                resendLoading? <BeatLoader color='white'/> : `${resend}`
+                            }
+                        </button>
                     </div>
                     <div className="identify-mobile-input-button">
-                        <button onClick={()=> navigate("/changepass")}>Next</button>
+                        <button onClick={handleSend}>
+                            {
+                                loading? <BeatLoader color='white' /> : "Next"
+                            }
+                        </button>
                     </div>
+                    
                 </div>
             </div>
+                    {
+                        inputError?
+                        <div className="id-error-mobile">{errorMessage}</div> : null
+                    }
             <div className="identify-mobile-notice">
                 <div className="identify-mobile-notice-hold">
                     <h1>Did not receive email verification code?</h1>
