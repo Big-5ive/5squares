@@ -7,6 +7,8 @@ import Login from "./Components/Auth/Login/Login";
 import ChangePassword from "./Components/Auth/resetpassword/resetPassword";
 import VerifyOtp from "./Pages/otpVerify/otpVerification";
 import PasswordVerify from "./Pages/passwordVerify/forgetPasswordVerify";
+import Account from "./Components/Account/Account";
+import Feedback from "./Components/Auth/Feedback/Feedback";
 
 const route = createHashRouter([
   {
@@ -32,7 +34,16 @@ const route = createHashRouter([
   {
     path: "/changepass",
     element: <ChangePassword />
-  }
+  },
+  {
+    path: "/feedback",
+    element: <Feedback />
+  },
+  {
+    path: "/acc",
+    element: <Account />
+  },
+
 ]);
 
 function App() {

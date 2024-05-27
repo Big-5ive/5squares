@@ -33,6 +33,7 @@ const VerifyOtp = () => {
             console.log(Response)
             setLoading(false)
             setErrorMessage("")
+            navigate("/")
           })
           .catch(virus => {
             setLoading(false)

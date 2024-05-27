@@ -29,7 +29,7 @@ const InputField = ({ type, ms, onChange, placeholder }) => {
     fontSize: "1.2rem",
     // fontFamily: "Montserrat",
     fontFamily:"inter",
-    color: "#dcdfe8",
+    color: "#333",
      border: "none",
     outline: "none",
   };
@@ -107,6 +107,7 @@ const InputField = ({ type, ms, onChange, placeholder }) => {
             placeholder="3ciadgr"
             placeholderTextColor={"#8E8E93"}
             style={{ ...input, ...ms }}
+            onChange={onChange}
           />
           <button onClick={() => setShow(!show)} style={{ ...iconContainer, ...ms }}>
             <img style={icon} src="/icons/done.png" alt="Done" />
