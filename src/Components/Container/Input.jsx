@@ -67,17 +67,15 @@ const InputField = ({ type, ms, onChange, placeholder }) => {
           <input
             type="password"
             placeholder="password"
-            placeholderTextColor={"#8E8E93"}
+            placeholdertextcolor={"#8E8E93"}
             style={{ ...input, ...ms }}
             onChange={onChange}
             className="pI"
           />
           <button onClick={() => setShow(!show)} style={{ ...iconContainer, ...ms }}>
             {show ? (
-            //   <img style={icon} src="/icons/slashEye.png" alt="Show" />
               <FiEyeOff style={icon} />
             ) : (
-            //   <img style={icon} src="/icons/eye.png" alt="Hide" />
               <FiEye style={icon} />
             )}
           </button>
