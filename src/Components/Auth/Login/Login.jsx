@@ -15,7 +15,7 @@ const Login = () => {
     console.log('Testing myUseff');
   },[])
   console.log(data);
-  console.log(import.meta.env.VITE_KEY)
+  console.log(import.meta.env.VITE_LOGIN_API)
   console.log(import.meta.env.VITE_NEW)
   console.log('NODE_ENV:', process.env.NODE_ENV);
   return (
