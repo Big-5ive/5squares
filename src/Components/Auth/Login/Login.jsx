@@ -4,13 +4,14 @@ import { LoginMobile } from "./MobileView/LoginMobile";
 import LoginHeader from "./DesktopView/LoginHeader";
 import LoginHero from "./DesktopView/LoginHero";
 import { useDispatch, useSelector } from "react-redux";
+import { DB } from "../../Global/Features";
 
 
 const Login = () => {
   const dispatch = useDispatch()
-  const data = useSelector(state => state.persistedReducer.Cart)
+  const data = useSelector(state => state.persistedReducer.data)
   useEffect(()=>{
-    
+    dispatch(DB(["Rice","Beans","Plantain","Fish"]))
     console.log('Testing myUseff');
   },[])
   console.log(data);
