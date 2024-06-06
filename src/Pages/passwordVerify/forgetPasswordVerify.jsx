@@ -9,20 +9,21 @@ const PasswordVerify = () => {
     const [loading, setLoading] = useState(false)
     const [loading2, setLoading2] = useState(false)
     const [inputError, setInputError] = useState(false)
-    const [inputErrorMessage, setInputErrorMessage] = useState(false)
+    const [inputErrorMessage, setInputErrorMessage] = useState("")
 
     const navigate = useNavigate()
     // console.log(value)
 
     const handleSendOTP = () => {
         setLoading(true)
+        setInputErrorMessage("")
         if (!value){
             setLoading(false)
             setInputError(true)
             setInputErrorMessage("you can't leave this field empty")
         }else{
             const userId = JSON.parse(localStorage.getItem("userData"))
-            const url = `https://fivesquare-api.onrender.com/api/verify/${userId.id}`
+            const url = `https://fivesquare-api.onrender.com/api/verify/${userId?.id}`
             const dataObject = {
                 userInput: value
             }

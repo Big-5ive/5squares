@@ -217,6 +217,7 @@ const Register = () => {
     }
   }
 
+
   const getState = (statechose) => {
     setState(statechose)
     setArrow(false)

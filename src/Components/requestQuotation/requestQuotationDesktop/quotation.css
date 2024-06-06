@@ -1,0 +1,193 @@
+.quotation-desktop-parent{
+    width: 100%;
+    min-height: 100vh;
+    /* display: flex; */
+    background-color: #f4f4f4;
+}
+.quotation-desktop-head{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.quotation-desktop-body{
+    width: 100%;
+    min-height: 900px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+}
+.request-post{
+    width: 80%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    /* background-color: white; */
+}
+.quotation-desktop-request-hold{
+    width: 80%;
+    min-height: 900px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.quotation-input-hold{
+    width: 75%;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: tan; */
+}
+.quotation-input-hold p{
+    font-size: 15px;
+    font-weight: bold;
+}
+.quotation-input-hold input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid silver;
+    padding-left: 1%;
+    border-radius: 5px;
+    outline: none;
+}
+.quotation-input-hold2{
+    width: 75%;
+    height: 70px;
+    /* background-color: tan; */
+}
+.quotation-input-hold2-name{
+    width: 100%;
+    height: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    /* background-color: teal; */
+}
+.quotation-input-hold2-input-hold{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: tan; */
+}
+.quotation-input-hold2-input-hold input{
+    width: 48%;
+    height: 40px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding-left: 1%;
+    outline: none;
+}
+#pieces{
+    width: 48%;
+    height: 40px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    outline: none;
+}
+.quotation-desktop-detail-hold{
+    width: 75%;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: tan; */
+}
+.quotation-detail-explain{
+    width: 100%;
+    height: 380px;
+}
+#multilineInput{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    outline: none;
+    padding: 2%;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.quotation-pictures{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    gap: 10px;
+    /* background-color: yellow; */
+}
+.quotation-picture-itself{
+    width: 10%;
+    height: 100%;
+    /* border: 1px solid silver; */
+}
+.quotation-picture-itself img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.quotation-picture-upload-hold{
+    width: 200px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px dashed black;
+    background-color: #fbfbfb;
+}
+.quotation-desktop-button{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: green; */
+}
+.quotation-desktop-button button{
+    width: 30%;
+    height: 50%;
+    font-size: 20px;
+    color: white;
+    border-radius: 50px;
+    background-color: orangered;
+}
+.quotation-desktop-button button:hover{
+    background-color: rgb(246, 120, 74);
+}
+.quotation-desktop-button button:active{
+    background-color: orangered;
+}
+.quotation-mobile-view{
+    width: 100%;
+    height: max-content;
+    display: none;
+}
+
+@media screen and (width < 1200px) {
+    .quotation-desktop-head{
+        display: none;
+    }
+    .quotation-desktop-body{
+        display: none;
+    }
+    .quotation-mobile-view{
+        display: block;
+    }
+}
