@@ -8,8 +8,6 @@ const persistConfig ={
     storage,
 }
 
-
-
 const persistedReducer= persistReducer(persistConfig,myReducer);
 
 export const store = configureStore ({

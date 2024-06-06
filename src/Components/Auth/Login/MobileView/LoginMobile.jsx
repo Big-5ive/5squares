@@ -16,7 +16,7 @@ export function LoginMobile() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const nav = useNavigate();
-  const url = "https://fivesquare-api.onrender.com/api/loginE";
+  const url = import.meta.env.VITE_LOGIN_API;
 
   const handleForgotPass = ()=>{
     nav("/forget-pass")

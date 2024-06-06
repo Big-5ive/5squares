@@ -2,6 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     data: [],
+    Cart: ["Hello World"],
+    loggedInUser: {},
+    loggedInUserToken: " ",
 };
 
 const ProductState = createSlice({
@@ -10,6 +13,7 @@ const ProductState = createSlice({
     reducers:{
         DB:(state, {payload})=>{
             state.data = payload
+            console.log(payload);
         }
     }
 })
