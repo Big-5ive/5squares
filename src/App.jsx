@@ -9,6 +9,11 @@ import VerifyOtp from "./Pages/otpVerify/otpVerification";
 import PasswordVerify from "./Pages/passwordVerify/forgetPasswordVerify";
 import Account from "./Components/Account/Account";
 import Feedback from "./Components/Auth/Feedback/Feedback";
+import MyProfile from "./Pages/profile/profileDesktop/profile";
+// import MyOwnProfile from "./Pages/profile/profileMobile/myProfile/myProfile";
+import MobileSettings from "./Pages/settings/settingsMobile/settingsmobile";
+import MyProfileDesktopVersion from "./Pages/profile/profileDesktop/myProfileDesktop/myprofileDesktop";
+import QuotationDesktop from "./Components/requestQuotation/requestQuotationDesktop/Quotation";
 
 const route = createHashRouter([
   {
@@ -43,6 +48,22 @@ const route = createHashRouter([
     path: "/acc",
     element: <Account />
   },
+  {
+    path: "profile",
+    element: <MyProfile />
+  },
+  {
+    path: "ownprofile",
+    element: <MyProfileDesktopVersion />
+  },
+  {
+    path: "settings-mobile",
+    element: <MobileSettings />
+  },
+  {
+    path: "quotation",
+    element: <QuotationDesktop />
+  }
 
 ]);
 

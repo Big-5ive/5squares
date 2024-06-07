@@ -1,0 +1,105 @@
+.myown-profile-parent{
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+    background-color: white;
+}
+.myown-profile-head{
+    width: 100%;
+    height: 50px;
+    /* background-color: yellow; */
+}
+.myown-head-hold{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    justify-content: space-between;
+}
+.myown-profile-main-head{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(228, 227, 227);
+}
+.myown-profile-pic{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: gray;
+}
+.myown-profile-name{
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    /* background-color: yellow; */
+}
+.myown-profile-name h1{
+    font-size: 20px;
+    font-weight: bold;
+}
+.qr-code{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.myown-account-information{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+    /* background-color: yellow; */
+}
+.myown-info{
+    width: 100%;
+    height: 90px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid silver;
+    /* background-color: yellow; */
+}
+.myown-full-name{
+    width: 60%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: blue; */
+}
+.myown-full-name p{
+    color: gray;
+}
+.myown-full-name h1{
+    font-size: 20px;
+    font-weight: 500;
+}
+.myown-info2{
+    width: 100%;
+    height: 90px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: 1px solid silver; */
+    /* background-color: yellow; */
+}
+

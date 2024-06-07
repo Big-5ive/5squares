@@ -237,6 +237,8 @@ const MobileRegister = () => {
       })
     }
   }
+
+
     return(
         <div className="mobilereg-wrap">
             <div className="mobile-reg-hold">

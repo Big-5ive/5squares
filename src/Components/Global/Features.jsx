@@ -5,6 +5,7 @@ const initialState={
     Cart: ["Hello World"],
     loggedInUser: {},
     loggedInUserToken: " ",
+    userProfile: [],
 };
 
 const ProductState = createSlice({
@@ -14,9 +15,13 @@ const ProductState = createSlice({
         DB:(state, {payload})=>{
             state.data = payload
             console.log(payload);
+        },
+        userProfile : (state, {payload}) => {
+            state.userProfile = payload
+            console.log(payload)
         }
     }
 })
 
-export const {DB} = ProductState.actions;
+export const {DB, getAllStates, userProfile} = ProductState.actions;
 export default ProductState.reducer;
