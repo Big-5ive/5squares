@@ -5,6 +5,7 @@ import LoginHeader from "./DesktopView/LoginHeader";
 import LoginHero from "./DesktopView/LoginHero";
 import { useDispatch, useSelector } from "react-redux";
 import { DB } from "../../Global/Features";
+import Footer from "../../Footer";
 
 
 const Login = () => {
@@ -26,6 +27,7 @@ const Login = () => {
       <div className="max-[700px]:hidden">
         <LoginHeader />
         <LoginHero />
+        <Footer />
       </div>
     </>
   );
