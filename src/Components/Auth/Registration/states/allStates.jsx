@@ -2,12 +2,18 @@ import './allStates.css'
 import { FiSearch } from "react-icons/fi";
 import axios from 'axios';
 import { RingLoader } from "react-spinners";
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { getAllStates } from '../../../Global/Features';
 
 const StateComponent = ({ondata}) => {
-    const [allStates, setAllStates] = useState([])
+    // const [allStates, setAllStates] = useState([])
     const [searchItem, setSearchItem] = useState('')
     const [loading, setLoading] = useState(false)
+
+    const dispatch = useDispatch()
+    const allStates = useSelector((e) => e.persistedReducer.allStates)
+    console.log(allStates)
 
     useEffect(()=>{
         setLoading(true)
@@ -15,7 +21,8 @@ const StateComponent = ({ondata}) => {
         const fetchStates = async () => {
           try {
             const response = await axios.get(url)
-            setAllStates(response.data.data)
+            // setAllStates(response.data.data)
+            dispatch(getAllStates(response.data.data))
             setLoading(false)
           } catch (error) {
             console.log(error)
