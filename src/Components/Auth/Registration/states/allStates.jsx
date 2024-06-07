@@ -1,43 +1,59 @@
 import './allStates.css'
 import { FiSearch } from "react-icons/fi";
-import axios from 'axios';
 import { RingLoader } from "react-spinners";
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { getAllStates } from '../../../Global/Features';
+import { useState } from 'react';
 
 const StateComponent = ({ondata}) => {
-    // const [allStates, setAllStates] = useState([])
     const [searchItem, setSearchItem] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const dispatch = useDispatch()
-    const allStates = useSelector((e) => e.persistedReducer.allStates)
-    console.log(allStates)
+    const allStates = [
+        "Abia",
+        "Abuja",
+        "Adamawa",
+        "Akwa Ibom",
+        "Anambra",
+        "Bauchi",
+        "Bayelsa",
+        "Benue",
+        "Borno",
+        "Cross River",
+        "Delta",
+        "Ebonyi",
+        "Edo",
+        "Ekiti",
+        "Enugu",
+        "Gombe",
+        "Imo",
+        "Jigawa",
+        "Kaduna",
+        "Kano",
+        "Katsina",
+        "Kebbi",
+        "Kogi",
+        "Kwara",
+        "Lagos",
+        "Nasarawa",
+        "Niger",
+        "Ogun",
+        "Ondo",
+        "Osun",
+        "Oyo",
+        "Plateau",
+        "Rivers",
+        "Sokoto",
+        "Taraba",
+        "Yobe",
+        "Zamfara"
+    ]
 
-    useEffect(()=>{
-        setLoading(true)
-        const url = "https://fivesquare-api.onrender.com/api/allstates"
-        const fetchStates = async () => {
-          try {
-            const response = await axios.get(url)
-            // setAllStates(response.data.data)
-            dispatch(getAllStates(response.data.data))
-            setLoading(false)
-          } catch (error) {
-            console.log(error)
-        } 
-        }
-        fetchStates()
-      },[])
-    //   console.log(allStates)
     const handleSendState = (e) => {
         const data = e
         ondata(data)
     }
 
-    const filteredItems = allStates.filter(item =>
-        item.toLowerCase().includes(searchItem.toLocaleLowerCase())
+    const filteredItems = allStates?.filter(e =>
+        e.toLowerCase().includes(searchItem.toLowerCase())
     )
 
     return(

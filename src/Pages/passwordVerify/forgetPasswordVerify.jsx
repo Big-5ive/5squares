@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom"
 // import { BeatLoader } from "react-spinners";
 import Identify from "../../Components/Auth/identityVerification/identityVerify";
+import { useSelector } from "react-redux";
 
 const PasswordVerify = () => {
     const [value, setValue] = useState()
@@ -12,6 +13,7 @@ const PasswordVerify = () => {
     const [inputErrorMessage, setInputErrorMessage] = useState("")
 
     const navigate = useNavigate()
+    const profile = useSelector((e) => e.persistedReducer.userProfile)
     // console.log(value)
 
     const handleSendOTP = () => {
@@ -22,8 +24,8 @@ const PasswordVerify = () => {
             setInputError(true)
             setInputErrorMessage("you can't leave this field empty")
         }else{
-            const userId = JSON.parse(localStorage.getItem("userData"))
-            const url = `https://fivesquare-api.onrender.com/api/verify/${userId?.id}`
+            // const userId = JSON.parse(localStorage.getItem("userData"))
+            const url = `https://fivesquare-api.onrender.com/api/verify/${profile?.id}`
             const dataObject = {
                 userInput: value
             }

@@ -8,6 +8,9 @@ import MobileRegister from "./mobile/registermobile";
 import { useNavigate } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import axios from "axios"
+import { useDispatch, useSelector } from "react-redux";
+import { userProfile } from "../../Global/Features";
+
 
 const Register = () => {
   const [arrow, setArrow] = useState(false);
@@ -35,6 +38,8 @@ const Register = () => {
   })
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const Profile = useSelector((e) => e.persistedReducer.userProfile)
 
   const handleMouseDown = (e) => {
     if (isVerified) return;
@@ -223,11 +228,10 @@ const Register = () => {
     setArrow(false)
   }
 
-  // console.log(dataObject)
 
   const handleRegister = () => {
     setLoading(true)
-    const url = "https://fivesquare-api.onrender.com/api/signup"
+    const url = import.meta.env.VITE_REGISTER_API;
     const dataObject = {
       state: state,
       tradeRole: tradeRole,
@@ -248,17 +252,10 @@ const Register = () => {
         type: "agree"
       })
     }else{
-      //  setError({
-      //     isError: false,
-      //     type: "",
-      //     message: ""
-      //   })
-      // setLoading(true)
       axios.post(url, dataObject)
       .then(Response => {
-        console.log(Response.data.data)
-        localStorage.setItem("userData", JSON.stringify(Response?.data.data))
-        // localStorage.setItem("userId", JSON.stringify(Response.data.data._id))
+        // console.log(Response.data.data)
+        dispatch(userProfile(Response?.data.data))
         setLoading(false)
         navigate("/verifyotp")
       })

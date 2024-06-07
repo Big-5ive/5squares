@@ -2,6 +2,7 @@ import { useState } from "react"
 import Identify from "../../Components/Auth/identityVerification/identityVerify"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
+import { useSelector } from "react-redux"
 
 const VerifyOtp = () => {
     const [otp, setOtp] = useState()
@@ -10,6 +11,8 @@ const VerifyOtp = () => {
     const [loading2, setLoading2] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
     const navigate = useNavigate()
+    const Profile = useSelector((e) => e.persistedReducer.userProfile)
+    // console.log(Profile)
 
     const handleInputChange =(e)=>{
         setOtp(e.target.value)
@@ -26,8 +29,8 @@ const VerifyOtp = () => {
             const dataObject = {
                 userInput: otp
             }
-            const userId = JSON.parse(localStorage.getItem("userData"))
-            const url = `https://fivesquare-api.onrender.com/api/verify/${userId.id}`
+            // const userId = JSON.parse(localStorage.getItem("userData"))
+            const url = `https://fivesquare-api.onrender.com/api/verify/${Profile.id}`
             axios.post(url, dataObject)
           .then(Response => {
             console.log(Response)
@@ -44,10 +47,9 @@ const VerifyOtp = () => {
         }
     }
     const handleResendOTP = () =>{
-        const userId = JSON.parse(localStorage.getItem("userData"))
         setLoading2(true)
             setError(false)
-            const url = `https://fivesquare-api.onrender.com/api/resend-otp/${userId.id}`
+            const url = `https://fivesquare-api.onrender.com/api/resend-otp/${Profile.id}`
             axios.post(url)
           .then(Response => {
             console.log(Response)
@@ -58,7 +60,6 @@ const VerifyOtp = () => {
             setError(true)
             setErrorMessage(virus.response.data)
             setLoading2(false)
-            // console.log(userId.id)
           })
     }
     return(
