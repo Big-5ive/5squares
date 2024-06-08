@@ -273,7 +273,7 @@ const Register = () => {
   }
   const signUp = "Sign Up";
   const headerLinks = [
-    { text: "join in", href: "/" },
+    { text: "join in", href: "#/" },
     { text: "Home Page", href: "/" },
   ];
 
