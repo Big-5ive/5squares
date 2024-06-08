@@ -109,6 +109,12 @@ const Feedback = () => {
       if (response.status === 200) {
         toast.success("Message sent successfully");
       }
+      setSelectedOption("Account")
+      setSelectedOption1("Select a reason")
+      setAdditionalInfo("")
+      setEmail("")
+      setImages([])
+
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message || "Error sending message");
