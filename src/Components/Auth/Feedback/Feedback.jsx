@@ -27,7 +27,7 @@ const Feedback = () => {
 
   const options1 = [
     "Verification code expired",
-    "Did not receive verification",
+    "Did not receive verification code",
     "Number of SMS verification codes sent has exceeded the daily limit",
     "Unable to change email address",
     "Password retrieval failed",
