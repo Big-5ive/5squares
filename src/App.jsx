@@ -63,7 +63,7 @@ const route = createHashRouter([
   {
     path: "quotation",
     element: <QuotationDesktop />
-  }
+  },
 
 ]);
 

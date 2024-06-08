@@ -203,15 +203,21 @@ const LoginCard = () => {
         <div className="flex space-x-4 items-center">
           <p>Sign in with:</p>
           <div className="flex space-x-4">
+            <a href="">
             <div className="rounded w-10 h-10  flex-center facebook">
               <FaFacebookF style={{ color: "white", fontSize: "20px" }} />
             </div>
+            </a>
+            <a href="https://fivesquare-api.onrender.com/googlelogin">
             <div className="w-10 h-10 rounded flex-center google">
               <FcGoogle style={{ fontSize: "20px" }} />
             </div>
+            </a>
+            <a href="https://fivesquare-api.onrender.com/linkedinlogin">
             <div className="w-10 h-10 rounded flex-center linkedin">
               <FaLinkedinIn style={{ color: "white", fontSize: "20px" }} />
             </div>
+            </a>
           </div>
         </div>
       </div>
