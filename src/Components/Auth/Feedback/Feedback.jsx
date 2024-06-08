@@ -17,23 +17,24 @@ const Feedback = () => {
   const [loading, setLoading] = useState(false);
   const nav = useNavigate();
   const options = [
-    "Account",
-    "Finding products/suppliers",
+    "Finding",
+    "Products/Suppliers",
     "Messenger",
     "Order",
     "Checkout",
-    "Return & Refund",
+    "Return and Refund",
+    "Logistics",
     "Others",
   ];
 
   const options1 = [
     "Verification code expired",
-    "Did not receive verification code",
-    "Number of SMS verification codes sent has exceeded the daily limit",
+    "Didn't receive verification code",
+    "Number of verification codes sent has exceeded the daily limit",
     "Unable to change email address",
     "Password retrieval failed",
+    "Unable to login the current account",
     "Account registration failed",
-    "Unable to login to the current account",
     "Others",
   ];
 
@@ -109,12 +110,11 @@ const Feedback = () => {
       if (response.status === 200) {
         toast.success("Message sent successfully");
       }
-      setSelectedOption("Account")
-      setSelectedOption1("Select a reason")
-      setAdditionalInfo("")
-      setEmail("")
-      setImages([])
-
+      setSelectedOption("Account");
+      setSelectedOption1("Select a reason");
+      setAdditionalInfo("");
+      setEmail("");
+      setImages([]);
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.message || "Error sending message");
