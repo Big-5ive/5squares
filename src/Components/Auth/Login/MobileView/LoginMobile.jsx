@@ -71,7 +71,7 @@ export function LoginMobile() {
       <Wrapper>
         <form onSubmit={handleSubmit} className="mb-20 w-full flex flex-col items-center space-y-3">
           <div className="flex-btw justify-between w-full">
-            <button className="flex-center space-x-3" type="button" onClick={() => nav(-1)}>
+            <button className="flex-center space-x-3" type="button">
               <IoCloseOutline style={{ fontSize: "2rem", color: "#858585" }} />
               <Typography type={"text2"}>Sign In</Typography>
             </button>

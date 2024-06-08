@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { PiCaretLeftThin, PiCaretDownThin, PiPlusThin } from "react-icons/pi";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Feedback = () => {
   const [selectedOption, setSelectedOption] = useState("Account");
@@ -14,7 +15,7 @@ const Feedback = () => {
   const [email, setEmail] = useState("");
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const nav = useNavigate();
   const options = [
     "Account",
     "Finding products/suppliers",
@@ -95,11 +96,15 @@ const Feedback = () => {
     });
 
     try {
-      const response = await axios.post('https://fivesquare-api.onrender.com/api/bugform', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
+      const response = await axios.post(
+        "https://fivesquare-api.onrender.com/api/bugform",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         }
-      });
+      );
 
       if (response.status === 200) {
         toast.success("Message sent successfully");
@@ -115,12 +120,16 @@ const Feedback = () => {
     }
   };
 
+  const handleCaretLeft = () => {
+    nav("/");
+  };
+
   return (
     <div className="flex justify-center w-full h-auto">
       <ToastContainer />
       <div className="flex flex-col items-center w-full h-auto">
         <div className="flex items-center justify-between w-[93%] h-auto py-3 sticky top-0 left-0 right-0 z-20 bg-white">
-          <PiCaretLeftThin className="text-2xl" />
+          <PiCaretLeftThin className="text-2xl" onClick={handleCaretLeft} />
           <p className="text-xl font-bold text-[#333]">Bug/Suggestion</p>
           <div className="">{""}</div>
         </div>
@@ -240,7 +249,10 @@ const Feedback = () => {
                 />
               </label>
             </div>
-            <button className="w-[93%] h-10 rounded-full text-white bg-[#f0be9c] mt-10" disabled={loading}>
+            <button
+              className="w-[93%] h-10 rounded-full text-white bg-[#f0be9c] mt-10"
+              disabled={loading}
+            >
               {loading ? "Submitting..." : "Submit"}
             </button>
           </form>
@@ -251,9 +263,6 @@ const Feedback = () => {
 };
 
 export default Feedback;
-
-
-
 
 // import React, { useState } from "react";
 // import { MdClose } from "react-icons/md";
