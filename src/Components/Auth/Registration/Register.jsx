@@ -10,6 +10,7 @@ import { BeatLoader } from "react-spinners";
 import axios from "axios"
 import { useDispatch, useSelector } from "react-redux";
 import { userProfile } from "../../Global/Features";
+import LoginHeader from "../Login/DesktopView/LoginHeader";
 
 
 const Register = () => {
@@ -270,12 +271,23 @@ const Register = () => {
       })
     }
   }
+  const signUp = "Sign Up";
+  const headerLinks = [
+    { text: "join in", href: "/" },
+    { text: "Home Page", href: "/" },
+  ];
 
   return (
+    <>
+      <LoginHeader
+          style={{backgroundColor : "#f0f0f0"}}
+          identityVerification={signUp}
+          links={headerLinks}
+        />
     <div className="register-wrapper">
-      <div className="register-head">
+      {/* <div className="register-head">
         <h1>5square</h1>
-      </div>
+      </div> */}
       <div className="register-body">
         <div className="register-body-hold">
           {arrow ? (
@@ -548,6 +560,7 @@ const Register = () => {
         <MobileRegister />
       </div>
     </div>
+    </>
   );
 };
 

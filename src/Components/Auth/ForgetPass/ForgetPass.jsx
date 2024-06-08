@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import { BeatLoader } from 'react-spinners';
 import axios from "axios";
+import LoginHeader from "../Login/DesktopView/LoginHeader";
 
 const ForgetPass = () => {
   const [position, setPosition] = useState(0);
@@ -108,11 +109,23 @@ const ForgetPass = () => {
     })
   }
 
+  const identityVerificationText = "Identity Verification";
+  const headerLinks = [
+    { text: "join in", href: "/join" },
+    { text: "Sign in", href: "#/register" },
+    { text: "Home Page", href: "/" },
+  ];
+
   return (
     <div className="forget-parent">
-      <div className="forget-head">
+      {/* <div className="forget-head">
         <h1>Retrieve Password</h1>
-      </div>
+      </div> */}
+       <LoginHeader
+          style={{backgroundColor : "#f0f0f0"}}
+          identityVerification={identityVerificationText}
+          links={headerLinks}
+        />
       <div className="forget-body">
         <div className="forget-body-hold">
           <div className="id-tell">
