@@ -65,7 +65,7 @@ const InputField = ({ type, ms, onChange, placeholder }) => {
       return (
         <div style={{ ...inputContainer, ...ms }}>
           <input
-            type="password"
+            type={show? "password":"text"}
             placeholder="password"
             placeholdertextcolor={"#8E8E93"}
             style={{ ...input, ...ms }}
