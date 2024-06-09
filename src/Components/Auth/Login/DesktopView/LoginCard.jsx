@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import LoginErrorMssg from "../MobileView/LoginErrorMssg";
 import { Link } from "react-router-dom";
@@ -203,9 +203,9 @@ const LoginCard = () => {
         <div className="flex space-x-4 items-center">
           <p>Sign in with:</p>
           <div className="flex space-x-4">
-            <a href="">
-            <div className="rounded w-10 h-10  flex-center facebook">
-              <FaFacebookF style={{ color: "white", fontSize: "20px" }} />
+            <a href="https://fivesquare-api.onrender.com/twitterlogin">
+            <div className="rounded w-10 h-10  flex-center twitter">
+              <FaTwitter style={{ color: "white", fontSize: "20px" }} />
             </div>
             </a>
             <a href="https://fivesquare-api.onrender.com/googlelogin">

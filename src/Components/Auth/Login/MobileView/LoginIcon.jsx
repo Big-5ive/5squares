@@ -6,11 +6,11 @@ import { TfiTwitterAlt } from "react-icons/tfi";
 const LoginIcon = () => {
   return (
     <div className="IconContainer my-9">
-      <a href="">
+      {/* <a href="">
         <div className="circle iconHolder flex-center facebook">
           <FaFacebookF style={{ color: "white", fontSize: "20px" }} />
         </div>
-      </a>
+      </a> */}
       <a href="https://fivesquare-api.onrender.com/googlelogin">
       <div className="circle iconHolder flex-center google">
         <FcGoogle style={{ fontSize: "20px" }} />
