@@ -4,7 +4,7 @@ import logo from "/images/5-Square Logo.png";
 
 const LoginHeader = ({ identityVerification, links, style }) => {
   return (
-    <header className="w-full h-20 flex justify-between items-center px-4" style={style}>
+    <header className="w-full h-20 flex justify-between items-center px-4 max-[700px]:hidden" style={style}>
      <div className="w-11/12 h-full flex justify-between items-center px-4   text-3xl font-bold ">
      <div className="h-20 flex items-center w-[60%]">
         <div className="h-[70%] w-[30%]">

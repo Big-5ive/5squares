@@ -14,11 +14,16 @@ import MyProfile from "./Pages/profile/profileDesktop/profile";
 import MobileSettings from "./Pages/settings/settingsMobile/settingsmobile";
 import MyProfileDesktopVersion from "./Pages/profile/profileDesktop/myProfileDesktop/myprofileDesktop";
 import QuotationDesktop from "./Components/requestQuotation/requestQuotationDesktop/Quotation";
+import LandingPage from "./Pages/LandingPage/LandingPage";
 
 const route = createHashRouter([
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/",
+    element: <LandingPage />,
   },
   {
     path: "/register",

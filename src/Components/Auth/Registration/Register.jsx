@@ -273,7 +273,7 @@ const Register = () => {
   }
   const signUp = "Sign Up";
   const headerLinks = [
-    { text: "join in", href: "#/" },
+    { text: "join in", href: "#/login" },
     { text: "Home Page", href: "#/" },
   ];
 
@@ -552,7 +552,7 @@ const Register = () => {
             </div>
           </div>
           <div className="account-already">
-            <p>Already have an account?<span onClick={()=>navigate("/")}>Sign in</span></p>
+            <p>Already have an account?<span onClick={()=>navigate("/login")}>Sign in</span></p>
           </div>
         </div>
       </div>

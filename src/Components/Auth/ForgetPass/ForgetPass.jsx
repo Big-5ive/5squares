@@ -111,7 +111,7 @@ const ForgetPass = () => {
 
   const identityVerificationText = "Identity Verification";
   const headerLinks = [
-    { text: "join in", href: "#/" },
+    { text: "join in", href: "#/login" },
     { text: "Sign in", href: "#/register" },
     { text: "Home Page", href: "#/" },
   ];
