@@ -13,15 +13,16 @@ const IdentityverifyMobile = ({
     resendLoading,
     inputError,
     errorMessage,
-    write
+    write,
+    maskedemail
 }) => {
     // const navigate = useNavigate()
     return(
         <div className="identify-mobile">
             <div className="identify-mobile-head">
                 <div className="identify-mobile-head-wrap">
-                    <p>We have alresdy sent a verification code to your email:</p>
-                    <p>jer***#@gmail.com</p>
+                    <p>We have already sent a verification code to your email:</p>
+                    <p>{maskedemail}</p>
                 </div>
             </div>
             <div className="identify-mobile-input">

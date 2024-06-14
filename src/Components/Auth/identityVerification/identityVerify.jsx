@@ -2,7 +2,7 @@ import './identityverify.css'
 import { PiWarningCircleFill } from "react-icons/pi";
 import { GiCheckMark } from "react-icons/gi";
 import { ImCancelCircle } from "react-icons/im";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { BeatLoader } from 'react-spinners';
 import IdentityverifyMobile from './identifymobile/identifyMobile';
 
@@ -19,6 +19,7 @@ const Identify = ({
     inputErrorMessage,
     loading,
     resendLoading,
+    maskedemail
 }) => {
     // const navigate = useNavigate()
     return(
@@ -55,7 +56,7 @@ const Identify = ({
                     <div className="verify-email-hold">
                         <p>Email adress: </p>
                         <select name="select" id="select">
-                            <option value="jer***@gmail.com">jer***@gmail.com</option>
+                            <option value="jer***@gmail.com">{maskedemail}</option>
                         </select>
                     </div>
                     <div className="verification-code">
@@ -137,6 +138,7 @@ const Identify = ({
                 errorMessage={inputErrorMessage}
                 placeholder={placeholder}
                 resendLoading={resendLoading}
+                maskedemail={maskedemail}
                 />
                 
             </div>

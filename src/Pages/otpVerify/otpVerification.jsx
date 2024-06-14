@@ -11,8 +11,7 @@ const VerifyOtp = () => {
     const [loading2, setLoading2] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
     const navigate = useNavigate()
-    const Profile = useSelector((e) => e.persistedReducer.userProfile)
-    // console.log(Profile)
+    const profile = useSelector((e) => e.persistedReducer.userProfile)
 
     const handleInputChange =(e)=>{
         setOtp(e.target.value)
@@ -24,14 +23,13 @@ const VerifyOtp = () => {
             setError(true)
             setLoading(false)
             setErrorMessage("pls input the code")
-            console.log("otp",otp)
         } else{
             const dataObject = {
-                userInput: otp
+             userInput: otp
             }
-            // const userId = JSON.parse(localStorage.getItem("userData"))
-            const url = `https://fivesquare-api.onrender.com/api/verify/${Profile.id}`
-            axios.post(url, dataObject)
+            const url = import.meta.env.VITE_OTP_VERIFY_API;
+            const url2 = `${url}/${profile?.id}`
+            axios.post(url2, dataObject)
           .then(Response => {
             console.log(Response)
             setLoading(false)
@@ -49,8 +47,9 @@ const VerifyOtp = () => {
     const handleResendOTP = () =>{
         setLoading2(true)
             setError(false)
-            const url = `https://fivesquare-api.onrender.com/api/resend-otp/${Profile.id}`
-            axios.post(url)
+            const url = import.meta.env.VITE_RESEND_OTP_API
+            const url2 = `${url}/${profile?.id}`
+            axios.post(url2)
           .then(Response => {
             console.log(Response)
             setLoading2(false)
@@ -62,6 +61,7 @@ const VerifyOtp = () => {
             setLoading2(false)
           })
     }
+
     return(
         <>
             <Identify
@@ -77,6 +77,7 @@ const VerifyOtp = () => {
              inputError={error}
              inputErrorMessage={errorMessage}
              resendLoading={loading2}
+             maskedemail={profile?.maskedEmail}
              />
         </>
     )

@@ -40,7 +40,7 @@ const Register = () => {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const Profile = useSelector((e) => e.persistedReducer.userProfile)
+  // const Profile = useSelector((e) => e.persistedReducer.userProfile)
 
   const handleMouseDown = (e) => {
     if (isVerified) return;
@@ -255,7 +255,7 @@ const Register = () => {
     }else{
       axios.post(url, dataObject)
       .then(Response => {
-        // console.log(Response.data.data)
+        // console.log(Response)
         dispatch(userProfile(Response?.data.data))
         setLoading(false)
         navigate("/verifyotp")

@@ -12,9 +12,11 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaRegEye } from "react-icons/fa6";
 import { TfiControlForward } from "react-icons/tfi";
 import { FaCheckCircle } from "react-icons/fa";
-import { RingLoader, BeatLoader } from "react-spinners";
-import { useState, useRef, useEffect } from 'react';
+import { BeatLoader } from "react-spinners";
+import { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userProfile } from "../../../Global/Features";
 import axios from "axios";
 
 
@@ -27,7 +29,7 @@ const MobileRegister = () => {
   const containerRef = useRef(null)
 //   const [company, setCompany] = useState("")
 
-    const [allStates, setAllStates] = useState([])
+    // const [allStates, setAllStates] = useState([])
     const [loading, setLoading] = useState(false)
     const [state, setState] = useState("")
     const [firstName, setFirstName] = useState("")
@@ -42,6 +44,8 @@ const MobileRegister = () => {
     })
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  // const profile = useSelector((e) => e.persistedReducer.userProfile)
 
   const handleMouseDown = (e) => {
     if (isVerified) return;
@@ -88,21 +92,46 @@ const MobileRegister = () => {
     setIsdragging(false);
   };
 
-  const fetchStates = async () => {
-    // setLoading(true)
-    const url = "https://fivesquare-api.onrender.com/api/allstates"
-      try {
-        const response = await axios.get(url)
-        setAllStates(response.data.data)
-        setLoading(false)
-      } catch (error) {
-        console.log(error)
-    } 
-    }
+  const allStates = [
+    "Abia",
+    "Abuja",
+    "Adamawa",
+    "Akwa Ibom",
+    "Anambra",
+    "Bauchi",
+    "Bayelsa",
+    "Benue",
+    "Borno",
+    "Cross River",
+    "Delta",
+    "Ebonyi",
+    "Edo",
+    "Ekiti",
+    "Enugu",
+    "Gombe",
+    "Imo",
+    "Jigawa",
+    "Kaduna",
+    "Kano",
+    "Katsina",
+    "Kebbi",
+    "Kogi",
+    "Kwara",
+    "Lagos",
+    "Nasarawa",
+    "Niger",
+    "Ogun",
+    "Ondo",
+    "Osun",
+    "Oyo",
+    "Plateau",
+    "Rivers",
+    "Sokoto",
+    "Taraba",
+    "Yobe",
+    "Zamfara"
+  ]
 
-    useEffect(()=>{
-        fetchStates()
-      },[])
 
       const passwordValidator = () => {
         const hasUpperCase = /[A-Z]/
@@ -201,7 +230,7 @@ const MobileRegister = () => {
         setLoading(false)
       }
     else {
-        const url = "https://fivesquare-api.onrender.com/api/signup"
+    const url = import.meta.env.VITE_REGISTER_API;
     const dataObject = {
       state: state,
       firstName: firstName,
@@ -214,8 +243,7 @@ const MobileRegister = () => {
     axios.post(url, dataObject)
       .then(Response => {
         console.log(Response.data.data)
-        localStorage.setItem("userData", JSON.stringify(Response?.data.data))
-        // localStorage.setItem("userId", JSON.stringify(Response.data.data._id))
+        dispatch(userProfile(Response?.data.data))
         setLoading(false)
         setIsVerified(true)
         setError({
@@ -227,13 +255,13 @@ const MobileRegister = () => {
       })
       .catch(virus => {
         console.log(virus)
+        setLoading(false)
+        setPosition(0)
         setError({
           isError: true,
           type: "virus",
-          message: virus.response.data.message
+          message: virus?.response.data.message
         })
-        setLoading(false)
-        setPosition(0)
       })
     }
   }
@@ -274,7 +302,6 @@ const MobileRegister = () => {
                         <div className="mobile-state">
                             <p style={{fontSize: "15px"}}>State/region</p>
                             <select
-                            onClick={fetchStates}
                             value={state}
                             onChange={(e)=> setState(e.target.value)}
                              name="mobile-state-select" id="mobile-state-select"
@@ -405,7 +432,7 @@ const MobileRegister = () => {
                             <p>By creating an account i agree to <a href="">5square.com terms and agreement</a></p>
                         </div>
                         <div className="mobile-sign">
-                            <p>Already have an account <span onClick={()=>navigate("/")}>SIgn in</span></p>
+                            <p>Already have an account <span onClick={()=>navigate("/login")}>SIgn in</span></p>
                         </div>
                     </div>
                 </div>

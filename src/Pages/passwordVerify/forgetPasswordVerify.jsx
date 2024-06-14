@@ -14,7 +14,7 @@ const PasswordVerify = () => {
 
     const navigate = useNavigate()
     const profile = useSelector((e) => e.persistedReducer.userProfile)
-    // console.log(value)
+    console.log(profile)
 
     const handleSendOTP = () => {
         setLoading(true)
@@ -25,11 +25,12 @@ const PasswordVerify = () => {
             setInputErrorMessage("you can't leave this field empty")
         }else{
             // const userId = JSON.parse(localStorage.getItem("userData"))
-            const url = `https://fivesquare-api.onrender.com/api/verify/${profile?.id}`
+            const url = import.meta.env.VITE_OTP_VERIFY_API;
+            const url2 = `${url}/${profile?.id}`
             const dataObject = {
                 userInput: value
             }
-            axios.post(url, dataObject)
+            axios.post(url2, dataObject)
             .then(Response => {
             console.log(Response)
             setLoading(false)
@@ -47,9 +48,9 @@ const PasswordVerify = () => {
 
     const handleResendOTP = () => {
         setLoading2(true)
-            const userId = JSON.parse(localStorage.getItem("userData"))
-            const url = `https://fivesquare-api.onrender.com/api/resend-otp/${userId.id}`
-            axios.post(url)
+             const url = import.meta.env.VITE_RESEND_OTP_API;
+            const url2 = `${url}/${profile?.id}`
+            axios.post(url2)
             .then(Response => {
             console.log(Response)
             setLoading2(false)
@@ -77,6 +78,7 @@ const PasswordVerify = () => {
         resendCode={handleResendOTP}
         placeholder={"code"}
         handleSend={handleSendOTP}
+        maskedemail={profile?.maskedemail}
         />
     )
 }

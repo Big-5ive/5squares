@@ -83,7 +83,7 @@ const ForgetPass = () => {
 
   const handleSubmit = () => {
     setLoading(true)
-    const url = "https://fivesquare-api.onrender.com/api/forgot"
+    const url = import.meta.env.VITE_FORGET_PASSWORD_API;
     const data = {
       email: email
     }
