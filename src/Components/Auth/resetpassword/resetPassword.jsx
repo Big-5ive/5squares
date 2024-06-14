@@ -5,9 +5,12 @@ import { FaRegCheckCircle } from "react-icons/fa";
 import { BeatLoader } from 'react-spinners';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const ChangePassword = () => {
     const navigate = useNavigate()
+    const profile = useSelector((e) => e.persistedReducer.userProfile)
+
     const [sucess, setSuccess] = useState(false)
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState()
@@ -46,12 +49,12 @@ const ChangePassword = () => {
                 type: "passwordValid",
                 message: "password must be at least 7 characters long and must contain uppercase, lowercase and special characters"
             })
-        }else if(password.length < 7) {
+        }else if(password.length < 8) {
             setLoading(false)
             setError({
                 isError: true,
                 type: "passwordLength",
-                message: "password must be at lest 7 characters long"
+                message: "password must be at lest 8 characters long"
             })
         }else if(!confirmPassword){
             setLoading(false)
@@ -68,13 +71,13 @@ const ChangePassword = () => {
                 message: "password and confirmPassword must match"
             })
         }else{
-            const userId = JSON.parse(localStorage.getItem("userData"))
             const dataObject = {
                 password: password,
                 confirmPassword: confirmPassword
             }
-            const url = `https://fivesquare-api.onrender.com/api/reset-user/${userId.id}`
-            axios.post(url, dataObject)
+            const url = import.meta.env.VITE_RESET_PASSWORD_API
+            const url2 = `${url}/${profile?.id}`
+            axios.post(url2, dataObject)
             .then(Response => {
                 setLoading(false)
                 setSuccess(true)
@@ -121,7 +124,7 @@ const ChangePassword = () => {
                     </div>
                     <div className="talk">
                         <h1>Reset successful, please keep in mind your new password</h1>
-                        <p onClick={()=>navigate("/")}>Sign in now</p>
+                        <p onClick={()=>navigate("/login")}>Sign in now</p>
                     </div>
                 </div>
             </div>:
